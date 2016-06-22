@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import quickTest.pages.HomePage;
 
-public class test {
+public class QuickTest {
     
     private WebDriver driver;
     
