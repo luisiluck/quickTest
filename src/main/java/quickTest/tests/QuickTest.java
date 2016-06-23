@@ -3,6 +3,7 @@ package quickTest.tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -16,6 +17,7 @@ public class QuickTest {
     @BeforeTest
     public void beforeTest() {
         driver = new FirefoxDriver();
+        driver.manage().window().maximize();
     }
 
     /**
@@ -45,6 +47,7 @@ public class QuickTest {
         // 5th step: Validate/assert that the current URL is http://www.sirsidynix.com/blog/2016/05/09/your-cosugi-compendium-everything-you-need-to-know-about
         Assert.assertEquals(driver.getCurrentUrl(),
                 "http://www.sirsidynix.com/blog/2016/05/09/your-cosugi-compendium-everything-you-need-to-know-about");
+        Reporter.log( "Success! Current URL is:\n" + driver.getCurrentUrl(), true );
     }
     
     @AfterTest

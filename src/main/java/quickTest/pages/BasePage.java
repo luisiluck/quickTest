@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 
 public abstract class BasePage {
     
@@ -30,6 +31,7 @@ public abstract class BasePage {
         // call own URL if web driver has about:blank
         if ( "about:blank".equals( driver.getCurrentUrl() ) ) {
             driver.get( getUrl() );
+            Reporter.log( "Navigating to " + getUrl(), true );
         }
     }
     

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Reporter;
 
 public class HomePage extends BasePage {
     
@@ -36,6 +37,7 @@ public class HomePage extends BasePage {
      */
     public HomePage setFieldSearch(String text) {
         fieldSearch().sendKeys(text);
+        Reporter.log( "Fill Search field with " + text, true );
         return this;
     }
     
@@ -53,6 +55,7 @@ public class HomePage extends BasePage {
      */
     public SearchResultsPage clickButtonSearch() {
         buttonSearch().click();
+        Reporter.log( "Search performed", true );
         return new SearchResultsPage( getDriver() );
     }
     
@@ -81,6 +84,7 @@ public class HomePage extends BasePage {
     public HomePage closePopUp() {
         buttonClosePopUp().click();
         explicitWait().until(ExpectedConditions.invisibilityOfElementLocated(buttonClosePopUp) );
+        Reporter.log( "Home Page pop up closed", true );
         return this;
     }
 

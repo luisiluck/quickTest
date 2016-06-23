@@ -3,6 +3,7 @@ package quickTest.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Reporter;
 
 public class SearchResultsPage extends BasePage {
     
@@ -39,6 +40,7 @@ public class SearchResultsPage extends BasePage {
      */
     public void clickItemResult(int i) {
         getItemResult(i).click();
+        Reporter.log( "Clicked on result #" + i, true );
     }
 
 }
