@@ -83,9 +83,13 @@ public class HomePage extends BasePage {
      * @return HomePage
      */
     public HomePage closePopUp() {
-        buttonClosePopUp().click();
-        explicitWait().until(ExpectedConditions.invisibilityOfElementLocated(buttonClosePopUp) );
-        Reporter.log( "Home Page pop up closed", true );
+    	if ( isElementPresent(buttonClosePopUp) ) {
+    		buttonClosePopUp().click();
+    		explicitWait().until(ExpectedConditions.invisibilityOfElementLocated(buttonClosePopUp) );
+    		Reporter.log( "Home Page pop up closed", true );
+    	} else {
+    		Reporter.log( "pop up is not present. Skip this step", true );
+		}
         return this;
     }
 

@@ -12,7 +12,7 @@ public abstract class BasePage {
     /**
      * Explicit Wait timeout
      */
-    private long timeout = 5;
+    private long timeout = 10;
 
     /**
      * base URL 
@@ -58,6 +58,10 @@ public abstract class BasePage {
     
     protected WebElement getElementBy(By locator) {
         return explicitWait().until( ExpectedConditions.elementToBeClickable(locator) );
+    }
+    
+    public Boolean isElementPresent(By locator) {
+    	return driver.findElements(locator).size() > 0;
     }
 
 }
