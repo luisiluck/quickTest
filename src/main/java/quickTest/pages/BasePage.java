@@ -29,7 +29,7 @@ public abstract class BasePage {
         wait = new WebDriverWait(driver, timeout);
         
         // call own URL if web driver has about:blank
-        if ( "about:blank".equals( driver.getCurrentUrl() ) ) {
+        if ( driver.getCurrentUrl().contains("about:blank") ) {
             driver.get( getUrl() );
             Reporter.log( "Navigating to " + getUrl(), true );
         }

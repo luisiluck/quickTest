@@ -47,7 +47,7 @@ public class QuickTest {
         // 5th step: Validate/assert that the current URL is http://www.sirsidynix.com/blog/2016/05/09/your-cosugi-compendium-everything-you-need-to-know-about
         Assert.assertEquals(driver.getCurrentUrl(),
                 "http://www.sirsidynix.com/blog/2016/05/09/your-cosugi-compendium-everything-you-need-to-know-about");
-        Reporter.log( "Success! Current URL is:\n" + driver.getCurrentUrl(), true );
+        Reporter.log( "Current URL is:\n" + driver.getCurrentUrl(), true );
     }
     
     @AfterTest

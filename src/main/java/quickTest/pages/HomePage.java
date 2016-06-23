@@ -37,7 +37,7 @@ public class HomePage extends BasePage {
      */
     public HomePage setFieldSearch(String text) {
         fieldSearch().sendKeys(text);
-        Reporter.log( "Fill Search field with " + text, true );
+        Reporter.log( "Fill Search field with: " + text, true );
         return this;
     }
     
@@ -55,8 +55,9 @@ public class HomePage extends BasePage {
      */
     public SearchResultsPage clickButtonSearch() {
         buttonSearch().click();
-        Reporter.log( "Search performed", true );
-        return new SearchResultsPage( getDriver() );
+        SearchResultsPage page = new SearchResultsPage( getDriver() );
+        Reporter.log( "Search performed. Going to:\n" + page.getUrl(), true );
+        return page;
     }
     
     /**

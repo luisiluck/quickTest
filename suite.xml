@@ -1,5 +1,8 @@
 <suite name="Group of group Suite" verbose="1">
   <test name="Quick Test">
+  	<listeners>
+		<listener class-name="helpers.TestListener" />
+	</listeners>
     <classes>
       <class name="quickTest.tests.QuickTest" />
     </classes>
